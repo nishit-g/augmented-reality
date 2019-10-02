@@ -12,7 +12,6 @@
 * Sync the project
 
 
-
 # Baby Steps
 
 * Add *ArFragment* to the `app/res/layout/content_main.xml` file replacing the `<TextView ....` portion. 
@@ -25,3 +24,17 @@
    android:layout_height="match_parent" />
 ```
 
+* Keep in mind the **id** of the `<fragment>` section --> sceneform_fragment
+
+
+* Open `app/manifests/AndroidManifest.xml` and in the `<manifest>` section add these elements:
+
+```
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-feature android:name="android.hardware.camera.ar" android:required="true" />
+```
+
+* Add the metadata in the `<application>` section :
+```
+<meta-data android:name="com.google.ar.core" android:value="required" />
+```
