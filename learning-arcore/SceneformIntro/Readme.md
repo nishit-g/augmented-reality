@@ -38,3 +38,14 @@
 ```
 <meta-data android:name="com.google.ar.core" android:value="required" />
 ```
+
+* Now it's time to reference the `<fragment...` in out `MainActivity.java` file, so that we can use the AR functionalities.
+* Start by creating a *private* variable of type `ArFragment`
+```
+private ArFragmemt fragment;
+```
+
+* use the below code to bind the fragment into our variable.
+```
+fragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.sceneform_fragment);
+```
