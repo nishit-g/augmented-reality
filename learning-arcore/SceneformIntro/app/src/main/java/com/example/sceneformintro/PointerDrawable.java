@@ -3,6 +3,7 @@ package com.example.sceneformintro;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 
 import androidx.annotation.NonNull;
@@ -24,7 +25,7 @@ public class PointerDrawable extends Drawable {
 
     @Override
     public void draw(@NonNull Canvas canvas) {
-        
+
     }
 
     @Override
@@ -39,6 +40,6 @@ public class PointerDrawable extends Drawable {
 
     @Override
     public int getOpacity() {
-        return 0;
+        return PixelFormat.OPAQUE;
     }
 }
