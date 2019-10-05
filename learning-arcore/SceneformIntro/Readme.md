@@ -49,3 +49,11 @@ private ArFragmemt fragment;
 ```
 fragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.sceneform_fragment);
 ```
+
+* Try running your app now !
+
+
+# Adding a pointer 
+#### We could use drag and drop to select one of the models and drag it onto the view. However, what seems to work best is to just look at where you want to place the model and tap it. This keeps your fingers out of the way so you can see better, and also makes it less cumbersome to hold the phone in the right place as dragging. 
+
+#### To do this, we'll add a pointer in the form of an overlay. The overlay will always be centered on the screen, and when we take a picture of the scene later, the pointer will not be in the image.
