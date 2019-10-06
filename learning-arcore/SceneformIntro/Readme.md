@@ -66,3 +66,8 @@ fragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.scenef
 
 
 ### Adding fields and overriding the methods
+* Add these fields in your `PointerDrawable` class
+```
+private final Paint paint = new Paint();
+private boolean enabled;
+```
