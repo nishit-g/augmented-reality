@@ -71,3 +71,16 @@ fragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.scenef
 private final Paint paint = new Paint();
 private boolean enabled;
 ```
+
+* Add getter and setter for `enabled` variable.
+* Right click -> Generate -> Getters and Setters -> Select `enabled` -> Click OK.
+
+```
+public boolean isEnabled() {
+ return enabled;
+}
+
+public void setEnabled(boolean enabled) {
+ this.enabled = enabled;
+}
+```
