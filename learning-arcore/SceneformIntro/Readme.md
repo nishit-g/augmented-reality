@@ -103,3 +103,16 @@ This should be the final method
         }
     }
 ```
+
+
+
+
+
+# Controlling the pointer
+
+We want to enable or disable the pointer based on the tracking state of the ARCore.
+
+* Add the `PointerDrawable pointer` in `MainActivity.class`
+* Add `boolean isTracking` - To know whether ArCore is in tracking state or not.
+* Add `boolean isHitting` - This will let us know if the user is looking at plane detected by ArCore.
+
