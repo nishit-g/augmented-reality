@@ -116,3 +116,18 @@ We want to enable or disable the pointer based on the tracking state of the ARCo
 * Add `boolean isTracking` - To know whether ArCore is in tracking state or not.
 * Add `boolean isHitting` - This will let us know if the user is looking at plane detected by ArCore.
 
+### Adding a listener
+For updating the pointer we need to make ArCore's api call and for calling the api we need to add a listener.
+
+We need to add a listener on ArSceneView's scene
+
+For finding the ArSceneView :
+```
+fragment.getArSceneView().getScene()
+```
+
+After finding the scene add the listener to it.
+
+```
+fragment.getArSceneView().getScene().addOnUpdateListener(....)
+```
