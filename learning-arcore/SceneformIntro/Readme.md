@@ -131,3 +131,18 @@ After finding the scene add the listener to it.
 ```
 fragment.getArSceneView().getScene().addOnUpdateListener(....)
 ```
+
+
+
+* `frameTime` provides time information of current frame.
+
+
+Finally the code should be 
+```
+fragment.getArSceneView().getScene().addOnUpdateListener(frameTime -> {
+ fragment.onUpdate(frameTime);
+ onUpdate();
+});
+```
+
+* `onUpdate()` is our method that we will be implementing.
