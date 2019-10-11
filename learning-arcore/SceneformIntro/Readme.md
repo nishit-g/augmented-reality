@@ -151,3 +151,12 @@ fragment.getArSceneView().getScene().addOnUpdateListener(frameTime -> {
 ### Implementing the `onUpdate()` method
 
 An overlay is an extra layer that sits on top of a View (the "host view") which is drawn after all other content in that view (including children, if the view is a ViewGroup). Interaction with the overlay layer is done by adding and removing drawables. 
+
+
+Here our pointer is an overlay.
+
+And overlay lies on View, thus we need to get the view.
+
+```
+View contentView = findViewById(android.R.id.content);
+```
