@@ -160,3 +160,12 @@ And overlay lies on View, thus we need to get the view.
 ```
 View contentView = findViewById(android.R.id.content);
 ```
+
+
+What the above code does is it finds the root view of the activity.
+
+The `android.R.id.content` ID value indicates the ViewGroup of the entire content area of an Activity.
+
+We need to 
+* update the tracking state. If ARCore is not tracking, remove the pointer until tracking is restored.
+* if ARCore is tracking, check for the gaze of the user hitting a plane detected by ARCore and enable the pointer accordingly.
