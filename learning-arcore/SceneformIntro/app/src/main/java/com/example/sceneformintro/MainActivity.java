@@ -16,6 +16,9 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     private ArFragment fragment;
+    private PointerDrawable pointer = new PointerDrawable();
+    private boolean isTracking;
+    private boolean isHitting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
