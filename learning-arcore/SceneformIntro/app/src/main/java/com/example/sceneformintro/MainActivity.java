@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean updateTracking() {
         Frame frame = fragment.getArSceneView().getArFrame();
+        boolean wasTracking = isTracking;
     }
 
     @Override
