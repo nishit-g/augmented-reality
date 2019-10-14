@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         boolean wasTracking = isTracking;
         isTracking = frame != null &&
                 frame.getCamera().getTrackingState() == TrackingState.TRACKING;
+        return isTracking != wasTracking;
     }
 
     @Override
