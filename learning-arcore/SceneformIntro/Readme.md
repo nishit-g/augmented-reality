@@ -169,3 +169,5 @@ The `android.R.id.content` ID value indicates the ViewGroup of the entire conten
 We need to 
 * update the tracking state. If ARCore is not tracking, remove the pointer until tracking is restored.
 * if ARCore is tracking, check for the gaze of the user hitting a plane detected by ARCore and enable the pointer accordingly.
+
+### Updating the tracking state
