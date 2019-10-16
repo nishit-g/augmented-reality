@@ -171,3 +171,8 @@ We need to
 * if ARCore is tracking, check for the gaze of the user hitting a plane detected by ARCore and enable the pointer accordingly.
 
 ### Updating the tracking state
+
+First we need to get the current frame, this can be done by 
+```
+Frame frame = fragment.getArSceneView().getArFrame();
+```
