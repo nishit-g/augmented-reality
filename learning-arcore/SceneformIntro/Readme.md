@@ -176,3 +176,10 @@ First we need to get the current frame, this can be done by
 ```
 Frame frame = fragment.getArSceneView().getArFrame();
 ```
+
+
+#### What is `Frame` ?
+
+According to Google ArCore Doucmentation,
+
+**Frame holds information about ARCore's state including tracking status, the pose of the camera relative to the world, estimated lighting parameters, and information on updates to objects (like Planes or Point Clouds) that ARCore is tracking.**
