@@ -183,3 +183,10 @@ Frame frame = fragment.getArSceneView().getArFrame();
 According to Google ArCore Doucmentation,
 
 **Frame holds information about ARCore's state including tracking status, the pose of the camera relative to the world, estimated lighting parameters, and information on updates to objects (like Planes or Point Clouds) that ARCore is tracking.**
+
+
+Now since we need to know whether this frame is different from previous frame we keep track of it by having a boolean variable `isTracking`
+
+If this frame is not null and the trackingState of the camera is in TRACKING_STATE then it's good else it's not.
+
+Hence we return whether `wasTracking == isTracking`.
