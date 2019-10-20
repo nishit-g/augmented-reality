@@ -190,3 +190,11 @@ Now since we need to know whether this frame is different from previous frame we
 If this frame is not null and the trackingState of the camera is in TRACKING_STATE then it's good else it's not.
 
 Hence we return whether `wasTracking == isTracking`.
+
+
+
+
+### Updating the hitTest
+
+
+First of all we need to know from where should we do the hitTest (Test which will tell us whether the person is looking at a plane detected by ARCore). 
