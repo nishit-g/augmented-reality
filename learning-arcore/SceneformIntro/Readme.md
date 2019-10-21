@@ -198,3 +198,15 @@ Hence we return whether `wasTracking == isTracking`.
 
 
 First of all we need to know from where should we do the hitTest (Test which will tell us whether the person is looking at a plane detected by ARCore). 
+
+
+We will be taking the centre of the screen as the point.
+
+To get the centre of the screen we do :
+
+```
+private android.graphics.Point getScreenCenter() {
+ View vw = findViewById(android.R.id.content);
+ return new android.graphics.Point(vw.getWidth()/2, vw.getHeight()/2);
+}
+```
