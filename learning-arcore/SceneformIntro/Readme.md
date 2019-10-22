@@ -210,3 +210,12 @@ private android.graphics.Point getScreenCenter() {
  return new android.graphics.Point(vw.getWidth()/2, vw.getHeight()/2);
 }
 ```
+
+
+
+Now we get the frame and store the point in a variable.
+
+```
+Frame frame = fragment.getArSceneView().getArFrame();
+android.graphics.Point pt = getScreenCenter();
+```
