@@ -235,3 +235,7 @@ Defines an intersection between a ray and estimated real-world geometry.
 `.hitTest(x,y)`
 
 Performs a ray cast from the user's device in the direction of the given location in the camera view. Intersections with detected scene geometry are returned, sorted by distance from the device; the nearest intersection is returned first.
+
+
+`.getTrackable()`
+Returns the Trackable that was hit. 
