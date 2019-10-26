@@ -239,3 +239,9 @@ Performs a ray cast from the user's device in the direction of the given locatio
 
 `.getTrackable()`
 Returns the Trackable that was hit. 
+
+
+
+What is `Trackable` ?
+A Trackable is something that ARCore can track and that Anchors can be attached to. 
+
