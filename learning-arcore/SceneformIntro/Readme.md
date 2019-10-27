@@ -245,3 +245,24 @@ Returns the Trackable that was hit.
 What is `Trackable` ?
 A Trackable is something that ARCore can track and that Anchors can be attached to. 
 
+
+
+```
+List<HitResult> hits;
+ boolean wasHitting = isHitting;
+ isHitting = false;
+ if (frame != null) {
+   hits = frame.hitTest(pt.x, pt.y);
+   for (HitResult hit : hits) {
+     Trackable trackable = hit.getTrackable();
+     if (trackable instanceof Plane &&
+             ((Plane) trackable).isPoseInPolygon(hit.getHitPose())) {
+       isHitting = true;
+       break;
+     }
+   }
+ }
+ return wasHitting != isHitting;
+ 
+ ```
+ 
