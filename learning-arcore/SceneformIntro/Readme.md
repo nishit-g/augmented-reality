@@ -266,3 +266,7 @@ List<HitResult> hits;
  
  ```
  
+
+ Finally, our two methods are implemented which we needed for setting an overlay of the pointer that we created.
+ 
+ Now our `onUpdate()` method will be :
