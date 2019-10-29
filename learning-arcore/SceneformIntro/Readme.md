@@ -270,3 +270,26 @@ List<HitResult> hits;
  Finally, our two methods are implemented which we needed for setting an overlay of the pointer that we created.
  
  Now our `onUpdate()` method will be :
+
+  ```
+ private void onUpdate() {
+ boolean trackingChanged = updateTracking();
+ View contentView = findViewById(android.R.id.content);
+ if (trackingChanged) {
+   if (isTracking) {
+     contentView.getOverlay().add(pointer);
+   } else {
+     contentView.getOverlay().remove(pointer);
+   }
+   contentView.invalidate();
+ }
+
+ if (isTracking) {
+   boolean hitTestChanged = updateHitTest();
+   if (hitTestChanged) {
+     pointer.setEnabled(isHitting);
+     contentView.invalidate();
+   }
+ }
+}
+```
