@@ -293,3 +293,8 @@ List<HitResult> hits;
  }
 }
 ```
+
+
+Since we need to refresh our view we use `contentView.invalidate()`.
+ 
+ 
