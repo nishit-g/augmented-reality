@@ -296,5 +296,11 @@ List<HitResult> hits;
 
 
 Since we need to refresh our view we use `contentView.invalidate()`.
+
+
+ ### Rest of the Steps 
+ 
+ Try following from  [this link](https://codelabs.developers.google.com/codelabs/sceneform-intro/index.html?index=..%2F..index#6)
+
  
  
