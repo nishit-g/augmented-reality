@@ -1,5 +1,6 @@
 package com.example.sceneformintro;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -17,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import java.util.List;
 
@@ -128,5 +131,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initializeGallery() {
+        LinearLayout gallery = findViewById(R.id.gallery_layout);
+
+        ImageView andy = new ImageView(this);
+        andy.setImageResource(R.drawable.droid_thumb);
+        andy.setContentDescription("andy");
+        andy.setOnClickListener(view ->{addObject(Uri.parse("andy_dance.sfb"));});
+        gallery.addView(andy);
+
+        ImageView cabin = new ImageView(this);
+        cabin.setImageResource(R.drawable.cabin_thumb);
+        cabin.setContentDescription("cabin");
+        cabin.setOnClickListener(view ->{addObject(Uri.parse("Cabin.sfb"));});
+        gallery.addView(cabin);
+
+        ImageView house = new ImageView(this);
+        house.setImageResource(R.drawable.house_thumb);
+        house.setContentDescription("house");
+        house.setOnClickListener(view ->{addObject(Uri.parse("House.sfb"));});
+        gallery.addView(house);
+
+        ImageView igloo = new ImageView(this);
+        igloo.setImageResource(R.drawable.igloo_thumb);
+        igloo.setContentDescription("igloo");
+        igloo.setOnClickListener(view ->{addObject(Uri.parse("igloo.sfb"));});
+        gallery.addView(igloo);
     }
 }
