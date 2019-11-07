@@ -160,4 +160,22 @@ public class MainActivity extends AppCompatActivity {
         igloo.setOnClickListener(view ->{addObject(Uri.parse("igloo.sfb"));});
         gallery.addView(igloo);
     }
+
+    private void addObject(Uri model) {
+        Frame frame = fragment.getArSceneView().getArFrame();
+        android.graphics.Point pt = getScreenCenter();
+        List<HitResult> hits;
+        if (frame != null) {
+            hits = frame.hitTest(pt.x, pt.y);
+            for (HitResult hit : hits) {
+                Trackable trackable = hit.getTrackable();
+                if (trackable instanceof Plane &&
+                        ((Plane) trackable).isPoseInPolygon(hit.getHitPose())) {
+                    modelLoader.loadModel(hit.createAnchor(), model);
+                    break;
+
+                }
+            }
+        }
+    }
 }
