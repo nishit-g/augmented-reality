@@ -5,13 +5,18 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.ar.core.Anchor;
 import com.google.ar.core.Frame;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
+import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -21,10 +26,11 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    private ModelLoader modelLoader;
     private ArFragment fragment;
     private PointerDrawable pointer = new PointerDrawable();
     private boolean isTracking;
@@ -32,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        modelLoader = new ModelLoader(new WeakReference<>(this));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -54,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
             fragment.onUpdate(frameTime);
             onUpdate();
         });
+
+        initializeGallery();
 
     }
 
@@ -177,5 +186,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void addNodeToScene(Anchor anchor, ModelRenderable renderable) {
+        AnchorNode anchorNode = new AnchorNode(anchor);
+        TransformableNode node = new TransformableNode(fragment.getTransformationSystem());
+        node.setRenderable(renderable);
+        node.setParent(anchorNode);
+        fragment.getArSceneView().getScene().addChild(anchorNode);
+        node.select();
+    }
+
+
+    public void onException(Throwable throwable){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(throwable.getMessage())
+                .setTitle("Codelab error!");
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        return;
     }
 }
