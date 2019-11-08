@@ -225,6 +225,7 @@ android.graphics.Point pt = getScreenCenter();
 Now if this current frame is not null then start the hitTest from the point and store the result of those of points in 
 ```
 List<HitResult> hits;
+```
 
 
 What is `HitResult` ?
