@@ -1,1 +1,14 @@
-C:\Users\Nishit Gupta\Documents\Augmented_Reality\learning-unity\Rookie\Rookie\Assets
+#Ignore folder named YourFolderName/
+Logs/
+Packages/
+ProjectSettings/
+Temp/
+Library/
+.vscode/
+obj/
+
+
+#Ignore all .yourFileExtension files
+*.meta
+*.sln
+*.csproj
