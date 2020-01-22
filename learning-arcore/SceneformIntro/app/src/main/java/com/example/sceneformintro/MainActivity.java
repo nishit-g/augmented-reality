@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.ar.core.Frame;
 import com.google.ar.sceneform.ux.ArFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean updateTracking() {
+        Frame frame = fragment.getArSceneView().getArFrame();
     }
 
     @Override
